@@ -1,0 +1,22 @@
+# Данные n8n (не коммитим, чтобы не засорять репозиторий)
+v2-n8n/docker/data/
+
+# Файлы с секретами
+.env
+*.env
+config.json
+credentials.json
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# Python (на будущее)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/

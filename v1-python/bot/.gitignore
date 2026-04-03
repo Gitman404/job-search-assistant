@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local state / reports (generated)
+state.json
+hh_debug_report.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Secrets (never commit)
+.env
+*.env
+
+

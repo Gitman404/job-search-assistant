@@ -1,0 +1,63 @@
+{
+  "vault_root": "D:/Obsidian Vaults/Проект_Карьера",
+  "vacancies_folder": "ПРОЕКТ КАРЬЕРА v1.0/02 - ПОИСК РАБОТЫ ( всё, что связанно с трудоустройством)/01 - Вакансии",
+  "default_status": "в_анализе",
+  "hh": {
+    "search_text": "\"менеджер проектов\" OR \"project manager\" OR \"junior project\" OR \"младший менеджер проектов\" OR \"ассистент project\" OR \"помощник менеджера проектов\" OR \"помощник project\"",
+    "area": 1,
+    "per_page": 20,
+    "pages": 1,
+    "only_with_salary": false,
+    "experience_allowed": ["noExperience", "between1And3"],
+    "require_title_contains_any": ["проект", "project"],
+    "exclude_title_contains_any": [
+      "по уходу",
+      "мерчандайзер",
+      "космет",
+      "нижнее белье",
+      "белье",
+      "корма",
+      "строитель",
+      "прораб",
+      "производитель работ"
+    ],
+    "exclude_text_contains_any": [
+      "строитель",
+      "строительство",
+      "девелоп",
+      "development",
+      "недвиж",
+      "жилой комплекс",
+      "жк",
+      "генподряд",
+      "подрядчик",
+      "пто",
+      "смет",
+      "технадзор",
+      "авторский надзор",
+      "инженер проекта",
+      "гип",
+      "исполнительная документация"
+    ],
+    "title_keywords_any": [
+      "администратор проекта",
+      "администратор проектов",
+      "координатор проекта",
+      "координатор проектов",
+      "помощник project",
+      "assistant project",
+      "младший менеджер проектов",
+      "junior project",
+      "стажер project",
+      "стажёр project",
+      "project manager",
+      "менеджер проектов"
+    ],
+    "bonus_keywords_any": ["ии", "нейросет", "llm", "no-code", "nocode", "автоматизац", "оптимизац", "процесс", "генератив"],
+    "prefer_office_hybrid": true,
+    "remote_penalty": 15,
+    "min_score_to_create": -30,
+    "debug_report": true
+  }
+}
+
