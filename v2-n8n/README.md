@@ -148,8 +148,6 @@ Schedule Trigger (ежедневно в 9:00)
 - Интеграция с CRM (например, Bitrix24)
 - Деплой на VPS
 
-![Схема workflow](./docs/workflow-screenshot.png)
-
 ## Ссылки
 
 - [n8n документация](https://docs.n8n.io/)
