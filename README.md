@@ -37,12 +37,12 @@
 
 
 
-### [Версия 1: Python + HH API](Proekt_karera/Career-project-v1.0/03-PET-project/career-bot/v1-python/README.md) — мой первый опыт и исследование API.
+### [Версия 1: Python + HH API](v1-python/bot/INSTALL.md) — мой первый опыт и исследование API.
 - Полный контроль над логикой
 - Глубокая интеграция с Obsidian (создание заметок)
 - Telegram-бот с командой `/run`
 
-### [Версия 2: n8n + Docker](Proekt_karera/Career-project-v1.0/03-PET-project/career-bot/v2-n8n/README.md) — текущая рабочая версия (рекомендуется к просмотру).
+### [Версия 2: n8n + Docker](v2-n8n/README.md) — текущая рабочая версия (рекомендуется к просмотру).
 
 - Визуальное проектирование workflow
 - Два источника данных (HH + Хабр Карьера)
@@ -86,7 +86,7 @@
 
 
 ### Для Python-версии
-Подробная инструкция в [v1-python/INSTALL](INSTALL.md)
+Подробная инструкция в [v1-python/INSTALL](bot/INSTALL.md)
 
 
 ### Для n8n-версии
