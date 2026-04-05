@@ -114,7 +114,10 @@ Schedule Trigger (ежедневно в 9:00)
 
 ## Как выглядит workflow в n8n
 
+
 ![Схема workflow](docs/workflow-screenshot.jpg)
+
+
 
 ## Проверка работы
 

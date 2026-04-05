@@ -61,6 +61,12 @@
 - Понять, как быстро собирать автоматизации
 - Научиться работать с Docker и развертыванием
 
+
+## Как выглядит workflow в n8n
+
+
+![Схема workflow](docs/workflow-screenshot.jpg)
+
 ## Как выглядит результат
 
 **Дайджест в Telegram:**
@@ -84,7 +90,7 @@
 
 
 ### Для n8n-версии
-Подробная инструкция в [Proekt_karera/Career-project-v1.0/03-PET-project/career-bot/v2-n8n/README](Proekt_karera/Career-project-v1.0/03-PET-project/career-bot/v2-n8n/README.md)
+Подробная инструкция в [v2-n8n/README](v2-n8n/README.md)
 
 ---
 
