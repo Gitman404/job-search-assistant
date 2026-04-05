@@ -86,7 +86,7 @@
 
 
 ### Для Python-версии
-Подробная инструкция в [v1-python/README](INSTALL.md)
+Подробная инструкция в [v1-python/INSTALL](INSTALL.md)
 
 
 ### Для n8n-версии
