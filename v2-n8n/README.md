@@ -112,11 +112,6 @@ Schedule Trigger (ежедневно в 9:00)
           │
           └──► Code (ранжирование) → Limit (топ-5) → Code (формирование) → Telegram
 
-## Как выглядит workflow в n8n
-
-
-![Схема workflow](docs/workflow-screenshot.jpg)
-
 
 
 ## Проверка работы
