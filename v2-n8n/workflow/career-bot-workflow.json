@@ -12,10 +12,10 @@
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.3,
       "position": [
-        -208,
-        432
+        -352,
+        576
       ],
-      "id": "a4c99436-bcea-42f8-afc0-9ad36d895cb6",
+      "id": "16c122ab-06bc-47bf-9892-a00f48b667dc",
       "name": "Schedule Trigger"
     },
     {
@@ -25,10 +25,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        384,
-        -144
+        240,
+        0
       ],
-      "id": "081d67f0-281c-409d-8f79-48c202bd16f2",
+      "id": "c667156b-ec24-434f-b717-a6f1be0f0d39",
       "name": "Code in JavaScript"
     },
     {
@@ -105,23 +105,23 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.2,
       "position": [
-        624,
-        -144
+        480,
+        0
       ],
-      "id": "722c628e-dba7-4990-98c6-17ed036cc2dc",
+      "id": "7d75b306-a838-4dd9-b837-9c1ec6f3ecfb",
       "name": "Filter опыт работы"
     },
     {
       "parameters": {
-        "maxItems": 10
+        "maxItems": 5
       },
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        544,
-        304
+        400,
+        448
       ],
-      "id": "62700a9b-5eb0-4e90-b5e1-3eb2f1ce177d",
+      "id": "23d6451d-0799-437f-9e55-3f7282aa4a53",
       "name": "Limit"
     },
     {
@@ -135,15 +135,15 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        960,
-        304
+        816,
+        448
       ],
-      "id": "cf673569-74ab-4157-a0c4-6656060de8ae",
+      "id": "ec3df12a-00a9-41ca-903b-378d3d23e7bd",
       "name": "Send a text message",
       "webhookId": "477c4d1d-6109-478d-b9a7-d981f8f270fc",
       "credentials": {
         "telegramApi": {
-          "id": "HfMnyLLCXmLvateE",
+          "id": "EfrWW1UAChryI5IP",
           "name": "Telegram account"
         }
       }
@@ -155,10 +155,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        752,
-        304
+        608,
+        448
       ],
-      "id": "cd94f2e7-b203-4c53-ae11-bdcb3799bc4e",
+      "id": "bd7303ec-d4ea-4e79-a9b8-b5d12c92093a",
       "name": "Code in JavaScript2"
     },
     {
@@ -208,10 +208,10 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.2,
       "position": [
-        784,
-        -144
+        640,
+        0
       ],
-      "id": "2af71ab7-860f-4ce1-aa16-23cecf1c9b8d",
+      "id": "039b2d8c-c7d8-46ec-b245-813adfe6228a",
       "name": "Filter формат работы"
     },
     {
@@ -257,10 +257,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        80,
-        976
+        -64,
+        1120
       ],
-      "id": "73cdd8eb-b2e9-48f8-a26f-85dff2b2d8b1",
+      "id": "d39db29a-9ba8-4447-8871-1d5da72791d2",
       "name": "HTTP Request2"
     },
     {
@@ -270,10 +270,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        368,
-        544
+        224,
+        688
       ],
-      "id": "1a7270d8-aef1-410a-b9a3-7b6ceb53dd54",
+      "id": "f6d18436-080c-4e8c-9c4f-b516c18adbd5",
       "name": "Code in JavaScript3"
     },
     {
@@ -350,10 +350,10 @@
       "type": "n8n-nodes-base.filter",
       "typeVersion": 2.2,
       "position": [
-        592,
-        544
+        448,
+        688
       ],
-      "id": "f98b7007-9660-4b53-8797-0312b97884b8",
+      "id": "579ef25d-d647-4278-bdb8-fb1d54b368d8",
       "name": "Filter опыт работы1"
     },
     {
@@ -363,10 +363,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        576,
-        992
+        432,
+        1136
       ],
-      "id": "61d6a869-9d7c-4282-8ea3-6ab7801d52f9",
+      "id": "c3262969-939b-40c4-8d25-80dbcdf4dd6c",
       "name": "Code in JavaScript Ранжирование"
     },
     {
@@ -374,10 +374,10 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        128,
-        304
+        -16,
+        448
       ],
-      "id": "b386255e-2db2-419d-9549-1f2b37f54a78",
+      "id": "14a00ec7-7b23-4f5d-8c06-c62f0e1a459c",
       "name": "Merge"
     },
     {
@@ -387,10 +387,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        352,
-        992
+        208,
+        1136
       ],
-      "id": "5f8a029e-bc01-4953-bf02-989db25a6e8f",
+      "id": "342a7575-b8f1-4c4d-9cd5-7e9e2d9f26ac",
       "name": "Code in JavaScript Ранжирование1"
     },
     {
@@ -400,10 +400,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        336,
-        304
+        192,
+        448
       ],
-      "id": "45fa0fd3-38d9-4c8b-ae49-a454b86bb79c",
+      "id": "d0a9c11b-7ef2-414b-bd5d-cbc62eb449a7",
       "name": "Code in JavaScript ранжирование"
     },
     {
@@ -434,10 +434,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        144,
-        -144
+        0,
+        0
       ],
-      "id": "03893eae-517b-4f7d-9119-ee72e9eaaa68",
+      "id": "394653bc-df34-47ae-9e1e-a9c21f0664e3",
       "name": "HTTP Request Хабр",
       "notesInFlow": false
     },
@@ -464,10 +464,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        144,
-        544
+        0,
+        688
       ],
-      "id": "6a43f562-fac1-4461-a3f9-a16b61490453",
+      "id": "a85dffbf-06f2-471a-b5f9-e7c72a7f4630",
       "name": "HTTP Request3 hh"
     }
   ],
@@ -544,11 +544,6 @@
         ]
       ]
     },
-    "HTTP Request2": {
-      "main": [
-        []
-      ]
-    },
     "Code in JavaScript3": {
       "main": [
         [
@@ -571,11 +566,6 @@
         ]
       ]
     },
-    "Code in JavaScript Ранжирование": {
-      "main": [
-        []
-      ]
-    },
     "Merge": {
       "main": [
         [
@@ -585,11 +575,6 @@
             "index": 0
           }
         ]
-      ]
-    },
-    "Code in JavaScript Ранжирование1": {
-      "main": [
-        []
       ]
     },
     "Code in JavaScript ранжирование": {
@@ -628,13 +613,14 @@
   },
   "active": false,
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "binaryMode": "separate"
   },
-  "versionId": "a9f4569c-5ea5-4e40-9abf-d702537f2e65",
+  "versionId": "4313b520-1d2d-47ea-ab3b-d41c68282c69",
   "meta": {
     "templateCredsSetupCompleted": true,
-    "instanceId": "22d1cba80c46ec06bf1af855601afba6889fa60c285e613ca8d3fcde5799ca48"
+    "instanceId": "924ee0f17d9fc92c9c85395134ac57beba07c575754f7ad8e002e2f03a472320"
   },
-  "id": "LrpUXJ2uWrap5KUn",
+  "id": "l9L86XsLUiDhqhlY",
   "tags": []
 }
