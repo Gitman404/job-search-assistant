@@ -45,4 +45,4 @@
 
 #### 🔗 СВЯЗИ
 
-[Вернуться к README](README.md)
+[Вернуться к README](Proekt_karera/Career-project-v1.0/03-PET-project/career-bot/README.md)

@@ -92,7 +92,7 @@ copy .\config.example.json .\config.json
 ```
 
 Дальше в `config.json` отредактируй минимум:
-- `vault_root` — путь к твоему vault (обычно `D:/Obsidian Vaults/Проект_Карьера`)
+- `vault_root` — путь к твоему vault (обычно `D:/Obsidian_Vaults/Proekt_karera`)
 - `vacancies_folder` — куда сохранять заметки вакансий внутри vault
 
 ## Следующие шаги
