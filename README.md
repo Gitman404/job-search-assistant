@@ -45,17 +45,20 @@
 
 ## Структура репозитория
 
-career-bot/  
-├── docs/ # Скриншоты и документация  
-├── README.md # Общее описание проекта (вы здесь)  
-├── v1-python/ # Прототип на Python (hh → Obsidian)  
-├── v2-n8n/ # Рабочая версия на n8n (hh + Хабр → Telegram)  
-│ ├── INSTALL.md # Техническая инструкция по запуску  
-│ ├── workflow/ # Экспортированный workflow n8n  
-│ ├──obsidian-templates/ # Шаблоны заметок для Obsidian
-│ └──docker/ # Docker-конфигурация  
-│ 
-└── .gitignore
+```text
+career-bot/
+├── docs/                 # Скриншоты и документация
+├── README.md             # Общее описание проекта (вы здесь)
+├── LICENSE               # Лицензия MIT
+├── v1-python/            # Прототип на Python (hh → Obsidian)
+├── v2-n8n/               # Рабочая версия на n8n (hh + Хабр → Telegram)
+│   ├── INSTALL.md        # Техническая инструкция по запуску
+│   ├── workflow/         # Экспортированный workflow n8n
+│   ├── docker/           # Docker-конфигурация
+│   └── .gitignore        # Исключения для Docker и БД
+└── .gitignore            # Общие исключения репозитория
+```
+
 
 ## Версии проекта
 
