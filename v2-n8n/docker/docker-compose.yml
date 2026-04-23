@@ -4,6 +4,7 @@ services:
   n8n:
     image: n8nio/n8n
     container_name: n8n-career-bot
+    user: root
     restart: unless-stopped
     ports:
       - "${N8N_PORT:-5678}:5678"
@@ -15,6 +16,7 @@ services:
     volumes:
       - ./data:/home/node/.n8n
       - ../workflows:/home/node/workflows
+      - "D:/Obsidian_Vaults/Proekt_karera/Career-project-v1.0/02_POISK_RABOTY/01_Vacancies:/home/node/obsidian_vacancies"
 
       
       

@@ -906,6 +906,7 @@
 "@n8n/n8n-nodes-langchain.modelSelector@1",
 "@n8n/n8n-nodes-langchain.guardrails@2",
 "@n8n/n8n-nodes-langchain.guardrails@1",
+"n8n-nodes-safe-exec.safeExecuteCommand@1",
 "n8n-nodes-base.actionNetworkTool@1",
 "n8n-nodes-base.activeCampaignTool@1",
 "n8n-nodes-base.adaloTool@1",
