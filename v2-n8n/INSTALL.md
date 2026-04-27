@@ -75,15 +75,25 @@ n8n будет доступен по адресу: [http://localhost:5678](http
 
 ## Структура workflow
 
-Schedule Trigger (ежедневно в 9:00)
-    │
-    ├──► Хабр: HTTP Request → Code (парсинг) → Filter (опыт) → Filter (формат)
-    │
-    └──► hh.ru: HTTP Request → Code (парсинг) → Filter (опыт) → Filter (формат)
-    │
-    └──► Merge (объединение)
-          │
-          └──► Code (ранжирование) → Limit (топ-5) → Code (формирование) → Telegram
+```
+career-bot-v2 (n8n + Docker)
+│
+├── [Schedule Trigger] Запуск каждые 3 дня в 09:00
+│
+├── Sources (Парсинг)
+│   └──► [Хабр Карьера]: HTTP Request → Code (парсинг) → Filter (опыт) → Filter (формат)
+│   └──► [hh.ru]: HTTP Request → Code (парсинг) → Filter (опыт) → Filter (формат)
+│
+├── Processing (Обработка)
+│   └── [Merge] (Объединение потоков)
+│       └──► [Code: Deduplication] Проверка уникальности по ID (Static Data)
+│           └──► [Code: Ranging] Ранжирование по релевантности
+│               └──► [Limit] Отбор ТОП-5 свежих вакансий
+│
+└── Delivery (Доставка)
+    └──► [Code Forming a message] Формирование сообщения → [Telegram] Отправка в канал
+    └──► [Code Obsidian Formation] Формирование заметки → Google Drive API → [Junction] → Obsidian
+```
 
 
 
