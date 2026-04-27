@@ -9,7 +9,7 @@
       "typeVersion": 2,
       "position": [
         1168,
-        1056
+        1072
       ],
       "id": "2f0f89c9-983c-4741-afb2-88412083ec42",
       "name": "Интеграция с Obsidian Code in JavaScript1"
@@ -22,7 +22,7 @@
       "typeVersion": 2,
       "position": [
         1392,
-        1056
+        1072
       ],
       "id": "8260f1db-6560-4802-8b4c-4a88b464207a",
       "name": "Преобразование в бинарный формат Code in JavaScript"
@@ -35,7 +35,7 @@
       "typeVersion": 2,
       "position": [
         1616,
-        1056
+        1072
       ],
       "id": "0ee7879e-eb07-49ff-9135-22cd75ce9bf6",
       "name": "Code in JavaScript1"
@@ -144,8 +144,8 @@
       "type": "n8n-nodes-base.limit",
       "typeVersion": 1,
       "position": [
-        1344,
-        192
+        1184,
+        208
       ],
       "id": "bfd65729-60c7-4e89-abc2-5655731bfeea",
       "name": "Limit"
@@ -161,12 +161,13 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        1728,
-        192
+        1744,
+        208
       ],
       "id": "67a7acb7-a21b-4b3b-9540-346e824f97b3",
       "name": "Send a text message",
       "webhookId": "477c4d1d-6109-478d-b9a7-d981f8f270fc",
+      "executeOnce": true,
       "credentials": {
         "telegramApi": {
           "id": "EfrWW1UAChryI5IP",
@@ -448,8 +449,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
       "position": [
-        240,
-        1040
+        304,
+        1072
       ],
       "id": "c57e6ca6-3076-4cee-a0cf-87f9695abb51",
       "name": "HTTP Request"
@@ -462,7 +463,7 @@
       "typeVersion": 2,
       "position": [
         736,
-        1040
+        1072
       ],
       "id": "85c536b2-52ca-4c95-93b9-c75a854205db",
       "name": "Code in JavaScript Ранжирование2"
@@ -475,7 +476,7 @@
       "typeVersion": 2,
       "position": [
         512,
-        1040
+        1072
       ],
       "id": "fbd51649-f448-4f2a-9715-d323981506a6",
       "name": "Code in JavaScript Ранжирование3"
@@ -512,8 +513,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.4,
       "position": [
-        -16,
-        1040
+        96,
+        1072
       ],
       "id": "cbf5ea9d-6582-4bf9-bd70-c671756afe45",
       "name": "HH Test"
@@ -530,7 +531,7 @@
       "typeVersion": 1.1,
       "position": [
         976,
-        1056
+        1072
       ],
       "id": "fd62b6f9-0bc2-47a2-9fd9-e98d9f0b4cfd",
       "name": "Read/Write Files from Disk"
@@ -557,8 +558,8 @@
       "type": "n8n-nodes-base.googleDrive",
       "typeVersion": 3,
       "position": [
-        1456,
-        560
+        1616,
+        512
       ],
       "id": "b30093a5-9bb9-4fe9-9abf-7ca9730ed7db",
       "name": "Create file from text",
@@ -597,39 +598,39 @@
     },
     {
       "parameters": {
-        "jsCode": "// Универсальный код ранжирования для любых вакансий\nconst items = $(\"Code in JavaScript Deduplication\").all();\nconst newItems = [];\n\nconst keywords = [\n    'ии', 'нейросет', 'искусственный интеллект', 'gpt',\n    'no-code', 'nocode', 'low-code',\n    'автоматизац', 'оптимизац', 'эффективност',\n    'проектирован', 'project', 'pm', 'agile', 'scrum', 'канбан',\n    'стажер', 'помощник', 'младший', 'junior', 'trainee', 'ассистент'\n];\n\nfor (const item of items) {\n    let rating = 0;\n    \n    // Универсальный способ получения текста для анализа\n    let fullText = '';\n    \n    // Если есть поле content (как у Хабра)\n    if (item.json.content) {\n        fullText = item.json.content.toLowerCase();\n    } \n    // Если есть title и description (как у hh.ru)\n    else {\n        const title = item.json.title ? item.json.title.toLowerCase() : '';\n        const description = item.json.description ? item.json.description.toLowerCase() : '';\n        fullText = title + ' ' + description;\n    }\n    \n    // Анализируем текст\n    for (const word of keywords) {\n        if (fullText.includes(word)) {\n            // Проверяем, есть ли слово в названии (дополнительный бонус)\n            const title = item.json.title ? item.json.title.toLowerCase() : '';\n            if (title.includes(word)) {\n                rating += 3;\n            } else {\n                rating += 1;\n            }\n        }\n    }\n    \n    newItems.push({\n        json: {\n            ...item.json,\n            rating: rating\n        }\n    });\n}\n\nnewItems.sort((a, b) => b.json.rating - a.json.rating);\n\nreturn newItems;"
+        "jsCode": "// Универсальный код ранжирования для любых вакансий\nconst items = $(\"Code in JavaScript Deduplication\").all();\nconst newItems = [];\n\nconst keywords = [\n    'ии', 'нейросет', 'искусственный интеллект', 'gpt',\n    'no-code', 'nocode', 'low-code',\n    'автоматизац', 'оптимизац', 'эффективност',\n    'проектирован', 'project', 'pm', 'agile', 'scrum', 'канбан',\n    'стажер', 'помощник', 'младший', 'junior', 'trainee', 'ассистент'\n];\n\nfor (const item of items) {\n    let rating = 0;\n    \n    // Универсальный способ получения текста для анализа\n    let fullText = '';\n    \n    // Если есть поле content (как у Хабра)\n    if (item.json.content) {\n        fullText = item.json.content.toLowerCase();\n    } \n    // Если есть title и description (как у hh.ru)\n    else {\n        const title = item.json.title ? item.json.title.toLowerCase() : '';\n        const description = item.json.description ? item.json.description.toLowerCase() : '';\n        fullText = title + ' ' + description;\n    }\n    \n    // Анализируем текст\n    for (const word of keywords) {\n        if (fullText.includes(word)) {\n            // Проверяем, есть ли слово в названии (дополнительный бонус)\n            const title = item.json.title ? item.json.title.toLowerCase() : '';\n            if (title.includes(word)) {\n                rating += 3;\n            } else {\n                rating += 1;\n            }\n        }\n    }\n    \n    newItems.push({\n        json: {\n            ...item.json, // Вот это добавит и id, и row_index, и всё остальное\n            rating: rating\n        }\n    });\n}\n\nnewItems.sort((a, b) => b.json.rating - a.json.rating);\n\nreturn newItems;"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1024,
-        32
+        976,
+        208
       ],
       "id": "ac370298-8eed-44a5-b47a-17aaadf6a1cd",
       "name": "Code in JavaScript Ranging"
     },
     {
       "parameters": {
-        "jsCode": "// Функция для экранирования спецсимволов MarkdownV2\nfunction escapeMarkdown(text) {\n  if (!text) return '';\n  const specialChars = ['_', '*', '[', ']', '(', ')', '~', '`', '>', '#', '+', '-', '=', '|', '{', '}', '.', '!'];\n  let escaped = String(text);\n  for (const char of specialChars) {\n    escaped = escaped.replace(new RegExp('\\\\' + char, 'g'), '\\\\' + char);\n  }\n  return escaped;\n}\n\n// 1. Получаем ТОП-5 вакансий после ранжирования\nconst allItems = $(\"Code in JavaScript Ranging\").all();\n\n// 2. Фильтруем: оставляем только те, которых НЕТ в базе (проверка через узел IF)\n// Мы ищем вакансии, где row_index не определен (значит в таблице их не нашли)\nconst newItems = allItems.filter(item => {\n  try {\n    // Пытаемся сопоставить данные с результатом проверки в узле IF\n    // Если в IF для этой вакансии row_index пустой — она новая\n    return !item.json.row_index; \n  } catch (e) {\n    return true; // Если что-то пошло не так, лучше показать вакансию\n  }\n});\n\n// Если НОВЫХ вакансий нет, отправляем грустный смайлик\nif (newItems.length === 0) {\n  return [{\n    json: {\n      message: \"😔 *Сегодня новых вакансий не найдено\\\\.*\\nОтдыхаем и восстанавливаем силы\\\\!\"\n    }\n  }];\n}\n\n// Формируем текст сообщения\nlet messageText = \"🚀 *Дайджест новых вакансий \" + escapeMarkdown(new Date().toLocaleDateString('ru-RU')) + \"*\\n\\n\";\n\nfor (let i = 0; i < newItems.length; i++) {\n  const item = newItems[i].json;\n  const title = escapeMarkdown(item.title || 'Без названия');\n  const author = escapeMarkdown(item.author || 'Не указана');\n  let description = escapeMarkdown(item.content || item.description || '');\n  \n  description = description.replace(/\\n/g, ' ').substring(0, 150);\n  if (description.length === 150) description += '...';\n\n  messageText += `*${i + 1}\\\\. ${title}*\\n`;\n  messageText += `🏢 ${author}\\n`;\n  messageText += `⭐ Рейтинг: ${item.rating || 0}\\n`;\n  messageText += `📝 ${description}\\n`;\n\n  if (item.source === 'hh.ru') {\n    messageText += `📌 Источник: HeadHunter\\n`;\n  } else {\n    messageText += `📌 Источник: Хабр Карьера\\n`;\n  }\n\n  const link = item.link || '';\n  messageText += `🔗 [Перейти к вакансии](${link})\\n`;\n\n  if (i < newItems.length - 1) {\n    messageText += `\\n---\\n\\n`;\n  }\n}\n\nreturn [{ json: { message: messageText } }];"
+        "jsCode": "// Функция для экранирования спецсимволов MarkdownV2\nfunction escapeMarkdown(text) {\n  if (!text) return '';\n  const specialChars = ['_', '*', '[', ']', '(', ')', '~', '`', '>', '#', '+', '-', '=', '|', '{', '}', '.', '!'];\n  let escaped = String(text);\n  for (const char of specialChars) {\n    escaped = escaped.replace(new RegExp('\\\\' + char, 'g'), '\\\\' + char);\n  }\n  return escaped;\n}\n\n// 1. Получаем ТОП-5 вакансий после ранжирования\nconst allItems = $(\"Code in JavaScript Ranging\").all();\n\n// 2. Фильтруем: оставляем только те, которых НЕТ в базе (проверка через узел IF)\n// Мы ищем вакансии, где row_index не определен (значит в таблице их не нашли)\nconst newItems = allItems.filter(item => {\n  try {\n    // Пытаемся сопоставить данные с результатом проверки в узле IF\n    // Если в IF для этой вакансии row_index пустой — она новая\n    return !item.json.row_index; \n  } catch (e) {\n    return true; // Если что-то пошло не так, лучше показать вакансию\n  }\n});\n\n// Если НОВЫХ вакансий нет, отправляем грустный смайлик\nconst items = $input.all();\n// Если это наша \"заглушка\"\nif (items[0].json.isNew === false) {\n  return [{\n    json: {\n      message: \"😔 *Сегодня новых вакансий не найдено\\\\.*\\nОтдыхаем и восстанавливаем силы\\\\!\"\n    }\n  }];\n}\n\n// Формируем текст сообщения\nlet messageText = \"🚀 *Дайджест новых вакансий \" + escapeMarkdown(new Date().toLocaleDateString('ru-RU')) + \"*\\n\\n\";\n\nfor (let i = 0; i < newItems.length; i++) {\n  const item = newItems[i].json;\n  const title = escapeMarkdown(item.title || 'Без названия');\n  const author = escapeMarkdown(item.author || 'Не указана');\n  let description = escapeMarkdown(item.content || item.description || '');\n  \n  description = description.replace(/\\n/g, ' ').substring(0, 150);\n  if (description.length === 150) description += '...';\n\n  messageText += `*${i + 1}\\\\. ${title}*\\n`;\n  messageText += `🏢 ${author}\\n`;\n  messageText += `⭐ Рейтинг: ${item.rating || 0}\\n`;\n  messageText += `📝 ${description}\\n`;\n\n  if (item.source === 'hh.ru') {\n    messageText += `📌 Источник: HeadHunter\\n`;\n  } else {\n    messageText += `📌 Источник: Хабр Карьера\\n`;\n  }\n\n  const link = item.link || '';\n  messageText += `🔗 [Перейти к вакансии](${link})\\n`;\n\n  if (i < newItems.length - 1) {\n    messageText += `\\n---\\n\\n`;\n  }\n}\n\nreturn [{ json: { message: messageText } }];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1536,
-        192
+        1568,
+        208
       ],
       "id": "287f0d65-9c72-414d-aa21-c99d976d14b0",
       "name": "Code in JavaScript2 Forming a message"
     },
     {
       "parameters": {
-        "jsCode": "// 1. Получаем данные из входящего узла\nconst items = $(\"Code in JavaScript Deduplication\").all();\nconst result = [];\n\n// --- Вспомогательные функции ---\nfunction formatDate(date) {\n  const d = new Date(date);\n  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;\n}\n\nfunction getEmploymentType(employment) {\n  const map = { 'full': 'fulltime', 'part': 'parttime', 'intern': 'intern', 'project': 'fulltime' };\n  return map[(employment || '').toLowerCase()] || 'fulltime';\n}\n\nfunction getSource(source) {\n  if (source === 'hh.ru') return 'hh';\n  if (source === 'Хабр Карьера') return 'habr';\n  return source || 'unknown';\n}\n\nfunction getMatchReason(title, content, rating) {\n  const reasons = [];\n  const t = (title || '').toLowerCase();\n  const c = (content || '').toLowerCase();\n  const keywords = {\n    'AI/нейросети': ['ии', 'нейросет', 'gpt', 'ai'],\n    'no-code/low-code': ['no-code', 'low-code'],\n    'автоматизация': ['автоматизац', 'оптимизац'],\n    'управление проектами': ['project', 'pm', 'agile', 'scrum']\n  };\n  for (const [cat, words] of Object.entries(keywords)) {\n    for (const w of words) {\n      if (t.includes(w)) { reasons.push(`${cat} (+3 балла)`); break; }\n      else if (c.includes(w)) { reasons.push(`${cat} (+1 балл)`); break; }\n    }\n  }\n  return reasons.length === 0 ? `Рейтинг: ${rating}` : `Рейтинг: ${rating}\\n\\n✅ ${reasons.slice(0, 3).join('\\n✅ ')}`;\n}\n\n// 2. Основной цикл обработки\nfor (const item of items) {\n  const v = item.json;\n  const createdAt = formatDate(new Date());\n  \n  // Очистка имен для файлов\n  const safeRole = (v.title || 'Вакансия').replace(/[<>:\"/\\\\|?*]/g, '').trim().substring(0, 50);\n  const safeCompany = (v.author || 'Неизвестная компания').replace(/[<>:\"/\\\\|?*]/g, '').trim().substring(0, 30);\n  const dateStr = createdAt.split('-').reverse().join('-');\n  const fileName = `${safeRole} - ${safeCompany} - ${dateStr}.md`;\n\n  // Формируем текст заметки\n  const noteContent = `---\ncompany: ${safeCompany}\nrole: ${safeRole}\nstatus: в_анализе\nsalary: ${v.salary || ''}\nlink: ${v.link || ''}\nexternal_id: ${v.id || ''}\ndeadline: \nsource: ${getSource(v.source)}\nlocation: ${v.city || ''}\nemployment_type: ${getEmploymentType(v.employment_type)}\nparsedByBot: false\nmatchScore: ${v.rating || 0}\ntags: vacancy\ncreatedAt: ${createdAt}\n---\n\n**Комментарий:**\n- [ ] Разбор вакансии проведён?\n\n**Почему бот выбрал эту вакансию**\n${getMatchReason(v.title, v.content, v.rating || 0)}\n\n**Связанные заметки:**\n- [[🚀«Проект«Карьера»v1.0»-Командный пункт]]\n- [[Дашборд-Вакансии по статусу]]`;\n\n  // 3. ВОЗВРАЩАЕМ РЕЗУЛЬТАТ (Важно: сохраняем все поля через v)\n  result.push({\n    json: {\n      ...v,              // Пробрасываем оригинальный ID и все поля дальше\n      fileName: fileName,\n      content: noteContent\n    }\n  });\n}\n\nreturn result;\n"
+        "jsCode": "// 1. Получаем данные из входящего узла\nconst items = $(\"Code in JavaScript Deduplication\").all();\nconst result = [];\n\n// --- Вспомогательные функции ---\nfunction formatDate(date) {\n  const d = new Date(date);\n  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;\n}\n\nfunction getEmploymentType(employment) {\n  const map = { 'full': 'fulltime', 'part': 'parttime', 'intern': 'intern', 'project': 'fulltime' };\n  return map[(employment || '').toLowerCase()] || 'fulltime';\n}\n\nfunction getSource(source) {\n  if (source === 'hh.ru') return 'hh';\n  if (source === 'Хабр Карьера') return 'habr';\n  return source || 'unknown';\n}\n\nfunction getMatchReason(title, content, rating) {\n  const reasons = [];\n  const t = (title || '').toLowerCase();\n  const c = (content || '').toLowerCase();\n  const keywords = {\n    'AI/нейросети': ['ии', 'нейросет', 'gpt', 'ai'],\n    'no-code/low-code': ['no-code', 'low-code'],\n    'автоматизация': ['автоматизац', 'оптимизац'],\n    'управление проектами': ['project', 'pm', 'agile', 'scrum']\n  };\n  for (const [cat, words] of Object.entries(keywords)) {\n    for (const w of words) {\n      if (t.includes(w)) { reasons.push(`${cat} (+3 балла)`); break; }\n      else if (c.includes(w)) { reasons.push(`${cat} (+1 балл)`); break; }\n    }\n  }\n  return reasons.length === 0 ? `Рейтинг: ${rating}` : `Рейтинг: ${rating}\\n\\n✅ ${reasons.slice(0, 3).join('\\n✅ ')}`;\n}\n\n// 2. Основной цикл обработки\nfor (const item of items) {\n  const v = item.json;\n  const createdAt = formatDate(new Date());\n  \n  // Очистка имен для файлов\n  const safeRole = (v.title || 'Вакансия').replace(/[<>:\"/\\\\|?*]/g, '').trim().substring(0, 50);\n  const safeCompany = (v.author || 'Неизвестная компания').replace(/[<>:\"/\\\\|?*]/g, '').trim().substring(0, 30);\n  const dateStr = createdAt.split('-').reverse().join('-');\n  const fileName = `${safeRole} - ${safeCompany} - ${dateStr}.md`;\n\n  // Формируем текст заметки\n  const noteContent = `---\ncompany: ${safeCompany}\nrole: ${safeRole}\nstatus: в_анализе\nsalary: ${v.salary || ''}\nlink: ${v.link || ''}\nexternal_id: ${v.id || ''}\ndeadline: \nsource: ${getSource(v.source)}\nlocation: ${v.city || ''}\nemployment_type: ${getEmploymentType(v.employment_type)}\nparsedByBot: false\nmatchScore: ${v.rating || 0}\ntags: vacancy\ncreatedAt: ${createdAt}\n---\n\n**Комментарий:**\n- [ ] Разбор вакансии проведён?\n\n**Почему бот выбрал эту вакансию**\n${getMatchReason(v.title, v.content, v.rating || 0)}\n\n**Связанные заметки:**\n- [[🚀«Проект«Карьера»v1.0»-Командный пункт]]\n- [[Дашборд-Вакансии по статусу]]`;\n\n  // 3. ВОЗВРАЩАЕМ РЕЗУЛЬТАТ (Важно: сохраняем все поля через v)\n  result.push({\n    json: {\n      ...v,              // Пробрасываем оригинальный ID и все поля дальше\n      ...item.json, // Вот это добавит и id, и row_index, и всё остальное\n      fileName: fileName,\n      content: noteContent\n    }\n  });\n}\n\nreturn result;\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1104,
-        560
+        1264,
+        512
       ],
       "id": "5fc5e3df-b651-4f98-b870-e7777e8e1d29",
       "name": "Code in JavaScript Obsidian Formation"
@@ -641,8 +642,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1296,
-        560
+        1440,
+        512
       ],
       "id": "bff51d9f-64a1-4f99-8392-97cb8e58fbc7",
       "name": "Code in JavaScript binary format"
@@ -673,12 +674,13 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        832,
-        208
+        816,
+        80
       ],
       "id": "d7f9f503-f322-4bc2-a9b5-1b63df2d6df5",
       "name": "Get row(s) in sheet Examination",
       "alwaysOutputData": true,
+      "executeOnce": true,
       "credentials": {
         "googleApi": {
           "id": "yFxWsBBBlp1p4vnJ",
@@ -704,7 +706,7 @@
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
-            "vacancy_id": "={{ $node[\"Code in JavaScript Deduplication\"].json.id }}"
+            "vacancy_id": "={{ $('Code in JavaScript Deduplication').first().json.id }}"
           },
           "matchingColumns": [
             "vacancy_id"
@@ -729,8 +731,8 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.7,
       "position": [
-        1632,
-        560
+        1792,
+        512
       ],
       "id": "8b9bebec-f1f9-4457-9040-3ad40614e382",
       "name": "Append row in sheet",
@@ -753,11 +755,11 @@
           "conditions": [
             {
               "id": "46692f0f-7a77-45dd-aa74-39a674cff8d3",
-              "leftValue": "={{ Object.keys($json).length > 0 }}",
+              "leftValue": "={{ $json.row_index }}",
               "rightValue": "",
               "operator": {
-                "type": "boolean",
-                "operation": "false",
+                "type": "string",
+                "operation": "empty",
                 "singleValue": true
               }
             }
@@ -769,11 +771,109 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3,
       "position": [
-        1056,
-        192
+        704,
+        1264
       ],
       "id": "5c4d0bff-fca9-4dc0-9699-e94e61759d7f",
       "name": "If"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Универсальный код ранжирования для любых вакансий\nconst items = $(\"Code in JavaScript Deduplication\").all();\nconst newItems = [];\n\nconst keywords = [\n    'ии', 'нейросет', 'искусственный интеллект', 'gpt',\n    'no-code', 'nocode', 'low-code',\n    'автоматизац', 'оптимизац', 'эффективност',\n    'проектирован', 'project', 'pm', 'agile', 'scrum', 'канбан',\n    'стажер', 'помощник', 'младший', 'junior', 'trainee', 'ассистент'\n];\n\nfor (const item of items) {\n    let rating = 0;\n    \n    // Универсальный способ получения текста для анализа\n    let fullText = '';\n    \n    // Если есть поле content (как у Хабра)\n    if (item.json.content) {\n        fullText = item.json.content.toLowerCase();\n    } \n    // Если есть title и description (как у hh.ru)\n    else {\n        const title = item.json.title ? item.json.title.toLowerCase() : '';\n        const description = item.json.description ? item.json.description.toLowerCase() : '';\n        fullText = title + ' ' + description;\n    }\n    \n    // Анализируем текст\n    for (const word of keywords) {\n        if (fullText.includes(word)) {\n            // Проверяем, есть ли слово в названии (дополнительный бонус)\n            const title = item.json.title ? item.json.title.toLowerCase() : '';\n            if (title.includes(word)) {\n                rating += 3;\n            } else {\n                rating += 1;\n            }\n        }\n    }\n    \n    newItems.push({\n        json: {\n            ...item.json,\n            rating: rating\n        }\n    });\n}\n\nnewItems.sort((a, b) => b.json.rating - a.json.rating);\n\nreturn newItems;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        976,
+        1264
+      ],
+      "id": "0b753a97-7b82-4355-8e36-53a304646af3",
+      "name": "Code in JavaScript Ranging1"
+    },
+    {
+      "parameters": {
+        "maxItems": 5
+      },
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        1616,
+        1264
+      ],
+      "id": "3cdd2371-251c-4f9b-a557-854292008375",
+      "name": "Limit1"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "advanced": true,
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "id",
+              "field2": "vacancy_id"
+            }
+          ]
+        },
+        "joinMode": "keepNonMatches",
+        "outputDataFrom": "input1",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        480,
+        1264
+      ],
+      "id": "dcc4bf4d-84e5-4f5c-a20b-e4f390b5679b",
+      "name": "Merge1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1. Берем ОДИН объект вакансии из источника через современный синтаксис\nconst freshVacancy = $(\"Code in JavaScript Deduplication\").first().json;\n\n// 2. Берем БАЗУ ID из таблицы (узел Get row(s) in sheet Examination)\nconst dbRows = $(\"Get row(s) in sheet Examination\").all();\n\n// 3. Собираем ID из таблицы в массив (убираем дубли и превращаем в строки)\nconst dbIds = [...new Set(dbRows.map(row => (row.json.vacancy_id || '').toString()))];\n\n// 4. Проверяем: есть ли ID нашей свежей вакансии в базе?\nconst currentId = (freshVacancy.id || '').toString();\nconst isDuplicate = dbIds.includes(currentId);\n\n// 5. Если вакансия уже есть в базе (дубликат)\nif (isDuplicate) {\n  return [{ \n    json: { \n      isNew: false, \n      message: \"No new vacancies\" \n    } \n  }];\n}\n\n// 6. Если вакансия НОВАЯ - пробрасываем её данные дальше\nreturn [{\n  json: {\n    ...freshVacancy,\n    isNew: true\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1344,
+        208
+      ],
+      "id": "86c4b31b-6ded-440b-a186-22d6ce9afa96",
+      "name": "Code in JavaScript Deduplication_Final"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "2865ae2f-97eb-45b0-83ef-de2ceb47c357",
+              "leftValue": "={{ $json.isNew }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1040,
+        528
+      ],
+      "id": "8ae3e9df-ad2c-4ca0-81d9-afb32e3d6f0d",
+      "name": "If1"
     }
   ],
   "pinData": {},
@@ -826,12 +926,7 @@
       "main": [
         [
           {
-            "node": "Code in JavaScript2 Forming a message",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Code in JavaScript Obsidian Formation",
+            "node": "Code in JavaScript Deduplication_Final",
             "type": "main",
             "index": 0
           }
@@ -977,13 +1072,7 @@
     },
     "Get row(s) in sheet Examination": {
       "main": [
-        [
-          {
-            "node": "If",
-            "type": "main",
-            "index": 0
-          }
-        ],
+        [],
         []
       ]
     },
@@ -1000,18 +1089,60 @@
     },
     "If": {
       "main": [
+        []
+      ]
+    },
+    "Send a text message": {
+      "main": [
+        []
+      ]
+    },
+    "Code in JavaScript Ranging1": {
+      "main": [
         [
           {
-            "node": "Code in JavaScript Ranging",
+            "node": "Limit1",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Send a text message": {
+    "Limit1": {
       "main": [
         []
+      ]
+    },
+    "Merge1": {
+      "main": [
+        []
+      ]
+    },
+    "Code in JavaScript Deduplication_Final": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript2 Forming a message",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript Obsidian Formation",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     }
   },
@@ -1020,7 +1151,7 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "a580d1df-d06e-432b-bc0c-242e9788a81a",
+  "versionId": "cbf1db25-f4e9-4493-8b88-a19fbf7f2605",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "924ee0f17d9fc92c9c85395134ac57beba07c575754f7ad8e002e2f03a472320"
