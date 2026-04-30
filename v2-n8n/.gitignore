@@ -1,22 +1,19 @@
-# Данные n8n (не коммитим, чтобы не засорять репозиторий)
-v2-n8n/docker/data/
+# Локальные данные n8n (не коммитим)
+docker/data/
+docker/.env
 
-# Файлы с секретами
-.env
-*.env
-config.json
-credentials.json
+# Экспортированные креды (содержат токены)
+workflow/credentials.json
 
-# Системные файлы
-.DS_Store
-Thumbs.db
+# Логи и временные файлы
+*.log
+*.tmp
+*.bak
 
-# Python (на будущее)
-__pycache__/
-*.pyc
-.venv/
-venv/
+# Резервные копии workflow
+*-backup.json
 
-# IDE
-.vscode/
-.idea/
+# SQLite файлы базы данных (n8n)
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm 
