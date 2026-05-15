@@ -12,7 +12,7 @@
 - **Telegram Bot API** — уведомления
 - **hh.ru API** — публичный API вакансий
 - **Хабр Карьера RSS** — публичная RSS-лента
-- **Google Drive API** — система хранение данных(облако)
+- **Dropbox API** — система хранение данных(облако)
 
 ## Требования
 
@@ -131,62 +131,66 @@ https://docs.google.com/spreadsheets/d/ЭТОТ_ТЕКСТ_И_ЕСТЬ_ID/edit
 
 ---
 
+## Настройка Dropbox + Obsidian (синхронизация)
 
-## Настройка Google Drive + Obsidian
+Бот сохраняет `.md` заметки в Dropbox, а Obsidian синхронизируется через плагин **Remotely Save**.
 
-Бот сохраняет `.md` заметки в Google Drive, а на вашем компьютере создаётся символическая ссылка (Junction), чтобы Obsidian видел эти файлы.
+### Шаг 1: Создайте приложение в Dropbox
 
-#### Шаг 1: Создайте папку в Google Drive
+1. Зайдите на [dropbox.com/developers/apps](https://www.dropbox.com/developers/apps)
+2. Нажмите **Create app**
+3. Выберите:
+   - **Scoped access**
+   - **Full Dropbox** (доступ ко всему хранилищу)
+4. Название: `n8n-obsidian-sync-bot`
+5. Нажмите **Create app**
 
-1. Зайдите на [drive.google.com](https://drive.google.com/)
-    
-2. Создайте папку: `Obsidian_Vacancies`
-    
-3. Откройте папку и скопируйте **ID папки** из адресной строки:
-    
-    text
-    
-    https://drive.google.com/drive/folders/ЭТОТ_ТЕКСТ_И_ЕСТЬ_ID
-    
+### Шаг 2: Настройте разрешения
 
-#### Шаг 2: Настройте узел Google Drive в n8n
+1. В панели приложения перейдите на вкладку **Permissions**
+2. Поставьте галочки:
+   - `files.content.write` (запись файлов)
+   - `files.content.read` (чтение файлов)
+3. Нажмите **Submit**
 
-1. В workflow найдите узел **Google Drive**
-    
-2. В поле **Credential** используйте ту же учётную запись, что для Google Sheets
-    
-3. **Operation**: `Create File From Text`
-    
-4. **Folder ID**: вставьте ID папки `Obsidian_Vacancies`
-    
-5. **File Name**: `{{$json.fileName}}`
-    
-6. **Content**: `{{$json.content}}`
+### Шаг 3: Настройте OAuth в n8n
 
-#### Шаг 3: Настройте Junction на Windows (один раз)
+1. В n8n добавьте узел **Dropbox**
+2. Нажмите **Create New** в поле **Credential**
+3. Выберите **OAuth2 API**
+4. Скопируйте **OAuth Redirect URL** из n8n
+5. Вернитесь в консоль Dropbox, вставьте этот URL в поле **Redirect URIs**
+6. Скопируйте **App key** (Client ID) и **App secret** (Client Secret) из Dropbox
+7. Вставьте их в n8n
+8. Нажмите **Connect** и разрешите доступ
 
-Запустите PowerShell **от имени администратора**:
+### Шаг 4: Настройте путь в узле Dropbox
 
-```powershell
+В узле **Dropbox** укажите:
 
-New-Item -ItemType Junction -Path "D:\Obsidian_Vaults\Proekt_karera\Career-project-v1.0\02_POISK_RABOTY\01_Vacancies" -Target "G:\Мой диск\Obsidian_Vacancies"
+| Поле | Значение |
+|------|----------|
+| **Operation** | `Upload` |
+| **File Path** | `/Приложения/remotely-save/Obsidian_Vaults/Proekt_karera/Career-project-v1.0/02_POISK_RABOTY/01_Vacancies/{{$json.fileName}}` |
+| **Binary Property** | `data` |
 
-```
+**Важно:** Путь должен совпадать с тем, который создаст плагин Remotely Save после первой синхронизации.
 
-**Важно:** Подставьте свои пути:
+### Шаг 5: Настройте Obsidian
 
-- `-Path` — путь к папке с вакансиями в вашем хранилище Obsidian
-    
-- `-Target` — путь к папке `Obsidian_Vacancies` на вашем Google Drive (он синхронизирован через приложение Google Drive для Windows)
-    
+1. Установите плагин **Remotely Save**
+2. В настройках выберите **Dropbox** как удалённый сервис
+3. Авторизуйтесь через Dropbox
+4. Нажмите **Sync** — папка структура создастся автоматически
+5. Скопируйте полный путь из настроек плагина в узел n8n
 
-#### Шаг 4: Проверьте
+### Преимущества Dropbox
 
-1. Запустите workflow
-    
-2. В Google Drive в папке `Obsidian_Vacancies` должны появиться `.md` файлы
-    
-3. В Obsidian в папке `01_Vacancies` они будут видны автоматически
+- ✅ Не требует Junction (символических ссылок)
+- ✅ Работает на любых устройствах (Windows, Mac, Linux)
+- ✅ Синхронизация с Obsidian через плагин
+- ✅ Доступно на смартфоне
+
 
 ## Как работает дедупликация
 
@@ -237,7 +241,7 @@ career-bot-v2 (n8n + Docker)
 │                └──► [Code: Ranging] ➔ Ранжирование по релевантности 
 │                     └──► [Limit] ➔ Отбор ТОП-5 свежих вакансий
 │                          └──► [Code: Deduplication_Final] ➔ Сравнение (Smart Match)
-│                               └──► [IF: Is New?] —————► (True) —► [Code Obsidian Formation] ➔ Формирование заметки ➔ [Google Drive API] ➔ [Junction] ➔ Obsidian
+│                               └──► [IF: Is New?] —————► (True) —► [Code Obsidian Formation] ➔ Формирование заметки ➔ [Dropbox API] ➔ [Remotely Save] ➔ Obsidian
 │
 │
 └── Delivery (Доставка)
@@ -248,17 +252,11 @@ career-bot-v2 (n8n + Docker)
 
 ## Проверка работы
 
-1. После импорта workflow нажмите **Execute Workflow**
-    
+1. После импорта workflow нажмите **Execute Workflow**
 2. Проверьте, что в Telegram пришло сообщение
-    
 3. Проверьте, что в Google Sheets появились ID вакансий
-    
-4. Проверьте, что в Google Drive появились `.md` файлы
-    
-5. Проверьте, что в Obsidian видны новые заметки
-    
-
+4. Проверьте, что в Dropbox появились `.md` файлы по указанному пути
+5. В Obsidian нажмите **Sync** (в плагине Remotely Save) — заметки должны появиться
 ---
 
 ## Устранение неполадок
@@ -282,12 +280,26 @@ career-bot-v2 (n8n + Docker)
 - По умолчанию в русском Google Sheets лист называется `Лист1`
     
 
-### Файлы не создаются в Obsidian
+### Файлы не создаются в Obsidian (Dropbox + Remotely Save)
 
-- Проверьте, что Junction создана корректно: в PowerShell выполните `dir D:\путь\к\папке` — ссылка должна вести на Google Drive
-    
-- Убедитесь, что Google Drive для Windows запущен и папка синхронизируется
-    
+1. **Проверьте путь в узле Dropbox:**
+   - Откройте Remotely Save в Obsidian
+   - Нажмите **Sync** один раз
+   - Скопируйте полный путь к папке из настроек плагина
+   - Убедитесь, что путь в узле Dropbox совпадает
+
+2. **Проверьте авторизацию:**
+   - В n8n откройте креденшел Dropbox
+   - Нажмите **Reconnect** и заново разрешите доступ
+
+3. **Проверьте синхронизацию:**
+   - В Obsidian нажмите **Sync** (стрелочка в левом нижнем углу)
+   - Должно появиться уведомление об успешной синхронизации
+
+4. **Если файлы есть в Dropbox, но не в Obsidian:**
+   - Проверьте, что в настройках Remotely Save выбран **Dropbox**
+   - Убедитесь, что путь к папке указан верно (без лишних слешей)
+   - Нажмите **Download from remote**
 
 ### Дубли всё равно появляются
 
