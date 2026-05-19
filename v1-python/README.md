@@ -61,7 +61,7 @@ Telegram (дайджест топ-5)
 
 ### Как запустить (локально, Windows)
 
-Открой PowerShell в папке `bot/` и следуй инструкциям из [v1-python/INSTALL](v1-python/bot/INSTALL.md)
+Открой PowerShell в папке `bot/` и следуй инструкциям из [v1-python/INSTALL](Career_project_v1.0/03-PET-project/career-bot/v1-python/bot/INSTALL.md)
 
 Проект не закончен, но если нужно посмотреть на код:
 ```
@@ -85,4 +85,4 @@ python run_hh_to_obsidian.py
 
 ## Почему остановлен
 
-На доработку потребовалось бы больше времени, чем я готов был инвестировать в Python на тот момент. Чтобы быстрее получить **работающий продукт**, я перешёл на low-code платформу n8n. (см. [v2-n8n](career-bot/README.md))
+На доработку потребовалось бы больше времени, чем я готов был инвестировать в Python на тот момент. Чтобы быстрее получить **работающий продукт**, я перешёл на low-code платформу n8n. (см. [v2-n8n](Career_project_v1.0/03-PET-project/career-bot/README.md))
