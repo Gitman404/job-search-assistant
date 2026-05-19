@@ -168,11 +168,11 @@ https://docs.google.com/spreadsheets/d/ЭТОТ_ТЕКСТ_И_ЕСТЬ_ID/edit
 
 В узле **Dropbox** укажите:
 
-| Поле | Значение |
-|------|----------|
-| **Operation** | `Upload` |
-| **File Path** | `/Приложения/remotely-save/Obsidian_Vaults/Proekt_karera/Career-project-v1.0/02_POISK_RABOTY/01_Vacancies/{{$json.fileName}}` |
-| **Binary Property** | `data` |
+| Поле                | Значение                                                                                                        |
+| ------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Operation**       | `Upload`                                                                                                        |
+| **File Path**       | `/Приложения/remotely-save/Obsidian_Vaults/Career-project-v1.0/02_POISK_RABOTY/01_Vacancies/{{$json.fileName}}` |
+| **Binary Property** | `data`                                                                                                          |
 
 **Важно:** Путь должен совпадать с тем, который создаст плагин Remotely Save после первой синхронизации.
 
@@ -223,6 +223,7 @@ https://docs.google.com/spreadsheets/d/ЭТОТ_ТЕКСТ_И_ЕСТЬ_ID/edit
     
 - Легко посмотреть статистику вручную
 
+
 ## Структура workflow
 
 ```
@@ -257,6 +258,7 @@ career-bot-v2 (n8n + Docker)
 3. Проверьте, что в Google Sheets появились ID вакансий
 4. Проверьте, что в Dropbox появились `.md` файлы по указанному пути
 5. В Obsidian нажмите **Sync** (в плагине Remotely Save) — заметки должны появиться
+
 ---
 
 ## Устранение неполадок
@@ -296,7 +298,7 @@ career-bot-v2 (n8n + Docker)
    - В Obsidian нажмите **Sync** (стрелочка в левом нижнем углу)
    - Должно появиться уведомление об успешной синхронизации
 
-4. **Если файлы есть в Dropbox, но не в Obsidian:**
+1. **Если файлы есть в Dropbox, но нет в Obsidian:**
    - Проверьте, что в настройках Remotely Save выбран **Dropbox**
    - Убедитесь, что путь к папке указан верно (без лишних слешей)
    - Нажмите **Download from remote**
@@ -306,7 +308,6 @@ career-bot-v2 (n8n + Docker)
 - Проверьте, что в Google Sheets таблица заполняется (выполните узел отдельно)
     
 - Убедитесь, что ID вакансий уникальны (Хабр выдаёт `guid`, hh.ru — `id`)
-
 
 
 ## Дорожная карта
