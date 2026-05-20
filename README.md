@@ -113,7 +113,7 @@ career-bot/
 ## Как выглядит workflow в n8n
 
 
-![Схема workflow](workflow-screenshot.3.jpg)
+![Схема workflow](docs/workflow-screenshot.2.2.3.jpg)
 
 
 ## Как выглядит результат
