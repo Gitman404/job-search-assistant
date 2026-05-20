@@ -46,22 +46,32 @@
 ## Структура репозитория
 
 ```text
+
 career-bot/
-├── docs/                 # Скриншоты и документация
-├── README.md             # Общее описание проекта (вы здесь)
-├── LICENSE               # Лицензия MIT
-├── CHANGELOG.md          # Журнал изменений
-├── v1-python/            # Прототип на Python (hh → Obsidian)
-├── v2-n8n/               # Рабочая версия на n8n (hh + Хабр → Telegram)
-│   ├── INSTALL.md        # Техническая инструкция по запуску
-│   ├── workflow/         # Экспортированный workflow n8n
-│   │   ├── v2.0_career-bot-workflow.json      # базовая версия
-│   │   ├── v2.1_career-bot-workflow.json      # с Obsidian
-│   │   └── v2.2_career-bot-workflow.json      # с дедупликацией
-│   ├── workflow-latest.json                   # символическая ссылка или копия последней версии
-│   ├── docker/           # Docker-конфигурация
-│   └── .gitignore        # Исключения для Docker и БД
-└── .gitignore            # Общие исключения репозитория
+├── docs/                  # Скриншоты и документация
+├── n8n_backups/           # (игнорируется) 
+│   ├── workflow/          # Экспортированный workflow n8n
+│   │   ├── v2.0_career-bot-workflow.json            # базовая версия
+│   │   ├── v2.1_career-bot-workflow.json            # с Obsidian
+│   │   └── v2.2_career-bot-workflow.json            # с дедупликацией
+│   └── workflow-latest/ 
+│       └── v2.2_career-bot-workflow-latest.json     # текущая изменения
+│
+├── v1-python/             # Прототип на Python (hh → Obsidian)
+├── v2-n8n/                # Рабочая версия на n8n (hh + Хабр → Telegram)
+│   ├── docker/            # Docker-конфигурация (игнорируется)
+│   │   ├── docker-compose.yml
+│   │   ├── .env.example
+│   │   └── data/          # (игнорируется) 
+│   ├── obsidian-templates/
+│   ├── .gitignore         # Исключения для Docker и БД
+│   └── INSTALL.md         # Техническая инструкция по запуску
+│ 
+├── .gitignore             # Общие исключения репозитория
+├── CHANGELOG.md           # Журнал изменений
+├── LICENSE                # Лицензия MIT
+└── README.md              # Общее описание проекта (вы здесь)
+
 ```
 
 
@@ -103,7 +113,7 @@ career-bot/
 ## Как выглядит workflow в n8n
 
 
-![Схема workflow](workflow-screenshot.1.5.jpg)
+![Схема workflow](workflow-screenshot.2.2.2.jpg)
 
 
 ## Как выглядит результат
