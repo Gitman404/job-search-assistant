@@ -81,16 +81,16 @@ career-bot/
 
 | Версия        | Технологии                     | Что умеет                       | Статус                                 | Ссылка                              |
 | ------------- | ------------------------------ | ------------------------------- | -------------------------------------- | ----------------------------------- |
-| **v1-python** | Python, HH API, Telebot        | Сбор с HH → Obsidian → Telegram | ⚠️Прототип (разработка приостановлена) | [Перейти](Career_project_v1.0/03-PET-project/career-bot/v1-python/bot/INSTALL.md) |
-| **v2-n8n**    | n8n, Docker, RSS, Telegram API | Сбор с HH + Хабр → Telegram     | ✅ Работает                             | [Перейти](Career_project_v1.0/03-PET-project/career-bot/v2-n8n/INSTALL.md)        |
+| **v1-python** | Python, HH API, Telebot        | Сбор с HH → Obsidian → Telegram | ⚠️Прототип (разработка приостановлена) | [Перейти](v1-python/bot/INSTALL.md) |
+| **v2-n8n**    | n8n, Docker, RSS, Telegram API | Сбор с HH + Хабр → Telegram     | ✅ Работает                             | [Перейти](v2-n8n/INSTALL.md)        |
 
-#### [Версия 1: Python + HH API](Career_project_v1.0/03-PET-project/career-bot/v1-python/README.md) — мой первый опыт и исследование API.
+#### [Версия 1: Python + HH API](v1-python/README.md) — мой первый опыт и исследование API.
 
 - Полный контроль над логикой
 - Глубокая интеграция с Obsidian (создание заметок)
 - Telegram-бот с командой `/run`
 
-#### [Версия 2: n8n + Docker](Career_project_v1.0/03-PET-project/career-bot/v2-n8n/INSTALL.md) — текущая рабочая версия (рекомендуется к просмотру).
+#### [Версия 2: n8n + Docker](v2-n8n/INSTALL.md) — текущая рабочая версия (рекомендуется к просмотру).
 
 - Визуальное проектирование workflow
 - Два источника данных (HH + Хабр Карьера)
@@ -191,11 +191,11 @@ career-bot/
 ## Как запустить
 
 #### Для Python-версии
-Подробная инструкция в [v1-python/INSTALL](Career_project_v1.0/03-PET-project/career-bot/v1-python/bot/INSTALL.md)
+Подробная инструкция в [v1-python/INSTALL](v1-python/bot/INSTALL.md)
 
 
 #### Для n8n-версии
-Подробная инструкция в [v2-n8n/INSTALL](Career_project_v1.0/03-PET-project/career-bot/v2-n8n/INSTALL.md)
+Подробная инструкция в [v2-n8n/INSTALL](v2-n8n/INSTALL.md)
 
 ---
 
